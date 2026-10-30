@@ -1,0 +1,933 @@
+/* === Mobile: Full width layout (≤768px) === */
+@media (max-width: 768px) {
+    :root {
+        --card-padding: 0;
+        --mobile-edge: 8px;
+        --schedule-glass-width: 100%;
+        --app-gap: 6px;
+    }
+
+    body {
+        padding: 0;
+        padding-bottom: var(--bottom-tabbar-clearance);
+        align-items: stretch;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body.auth-locked {
+        padding-bottom: 0;
+    }
+
+    .main-screens-stage {
+        width: 100%;
+        max-width: none;
+    }
+
+    .main-screens-stage.is-transitioning > .screen.screen-in-transition,
+    .main-screens-stage.is-dragging.is-dragging--stacked > .screen.swipe-from,
+    .main-screens-stage.is-dragging.is-dragging--stacked > .screen.swipe-neighbor,
+    .main-screens-stage.is-dragging > .screen.swipe-neighbor {
+        max-width: none;
+        width: 100%;
+    }
+
+    .screen,
+    #screen-schedule,
+    #screen-calendar,
+    #screen-profile,
+    #screen-instructions {
+        width: 100%;
+        max-width: none;
+        align-items: stretch;
+    }
+
+    .phone-screen,
+    #screen-schedule .phone-screen,
+    #screen-schedule .phone-screen.schedule-app-wrap,
+    #screen-calendar .phone-screen,
+    #screen-calendar .phone-screen.calendar-app-wrap,
+    #screen-profile .phone-screen,
+    #screen-profile .phone-screen.profile-app-wrap,
+    #screen-instructions .phone-screen,
+    #screen-instructions .phone-screen.instructions-app-wrap,
+    #screen-schedule .schedule-app-wrap,
+    #screen-calendar .calendar-app-wrap,
+    #screen-profile .profile-app-wrap,
+    #screen-instructions .instructions-app-wrap {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        box-sizing: border-box;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        gap: 0;
+    }
+
+    .app-screen-header {
+        width: 100%;
+        margin: 0;
+        position: static;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .app-header-bar {
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+        max-width: calc(100% - 16px) !important;
+        box-sizing: border-box !important;
+    }
+
+    #screen-schedule .route-sticky-header-wrap {
+        width: 100%;
+    }
+
+    #screen-calendar .app-community-footer,
+    #screen-profile .app-community-footer {
+        width: calc(100% - (var(--mobile-edge) * 2));
+        margin-left: var(--mobile-edge);
+        margin-right: var(--mobile-edge);
+        margin-bottom: 0;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    #screen-calendar .calendar-app-wrap {
+        padding-bottom: var(--bottom-tabbar-clearance);
+    }
+
+    #screen-schedule .screen-card--schedule .app-community-footer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .screen-card,
+    #screen-schedule .screen-card--schedule {
+        overflow: visible;
+    }
+
+    #screen-calendar .screen-card--calendar,
+    #screen-profile .screen-card--profile,
+    #screen-instructions .screen-card--instructions {
+        width: calc(100% - (var(--mobile-edge) * 2));
+        max-width: none;
+        margin-left: var(--mobile-edge);
+        margin-right: var(--mobile-edge);
+        margin-top: 0;
+        margin-bottom: 6px;
+        padding: 0;
+        border-radius: 0;
+        gap: 6px;
+        box-sizing: border-box;
+        background: transparent;
+        border: none;
+        flex: 0 1 auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    #screen-schedule .screen-card--schedule {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 8px;
+        border: none;
+        background: transparent;
+        overflow: visible;
+    }
+
+    #screen-instructions .instructions-app-wrap {
+        min-height: 100dvh;
+        max-height: 100dvh;
+        overflow: hidden;
+    }
+
+    .schedule-glass-stack {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        top: env(safe-area-inset-top, 0px);
+        border-radius: var(--card-radius);
+    }
+
+    #screen-schedule .route-sticky-header-wrap {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+    }
+
+    #screen-schedule .route-sticky-header-wrap .app-screen-header {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    #screen-schedule .route-sticky-header-wrap .schedule-glass-stack:not(.has-route-card) {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    #screen-schedule .route-sticky-header-wrap .schedule-glass-stack.has-route-card.schedule-glass-stack--route-tab {
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+        width: calc(100% - 16px) !important;
+        max-width: none !important;
+    }
+
+    #screen-schedule .route-sticky-header-wrap .schedule-glass-stack {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    #screen-schedule .route-header-card .header-top-row {
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 6px;
+    }
+
+    #screen-schedule .route-header-card .shift-meta {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #screen-schedule .route-header-card .date-controls {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+
+    #screen-schedule .route-header-card .header-bottom-row {
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    #screen-schedule .screen-card--schedule {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #screen-schedule {
+        overflow-x: clip;
+        max-width: 100%;
+    }
+
+    #screen-schedule .phone-screen,
+    #screen-schedule .phone-screen.schedule-app-wrap,
+    #screen-schedule .schedule-app-wrap {
+        overflow: visible !important;
+        padding-top: 0 !important;
+    }
+
+    .route-grid,
+    .route-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    #screen-profile .profile-identity-text {
+        max-width: none;
+    }
+
+    #screen-profile .profile-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .trains-list {
+        width: 100%;
+    }
+
+    .train-field,
+    .train-input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #tab-route,
+    #tab-schedule {
+        padding: 0 12px 28px;
+        box-sizing: border-box;
+    }
+
+    #screen-calendar .screen-card--calendar {
+        padding: 6px 10px 12px;
+        overflow: visible;
+    }
+
+    #screen-profile .screen-card--profile {
+        margin-top: 10px;
+        padding: 10px 0 12px;
+        overflow: visible;
+        gap: 10px;
+    }
+
+    #screen-profile .screen-card--profile .profile-card--hero {
+        margin-top: 0;
+    }
+
+    #screen-calendar .calendar-header,
+    #screen-calendar .calendar-legend,
+    #screen-calendar .shift-constructor {
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+
+    #screen-calendar .calendar-top-block {
+        overflow: visible;
+        flex-shrink: 0;
+    }
+
+    #screen-calendar .shift-constructor {
+        padding-bottom: 18px;
+        margin-bottom: 2px;
+    }
+
+    #screen-calendar .calendar-grid {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    #screen-calendar .calendar-local-routes-grid {
+        width: 100%;
+    }
+
+    #screen-calendar .calendar-local-route-btn {
+        flex: 1 1 calc(33.33% - 4px);
+        min-width: 0;
+    }
+
+    #screen-calendar .shift-summary-note-add {
+        width: calc(100% - var(--shift-summary-inset, 14px) * 2);
+        border-radius: var(--app-radius);
+    }
+
+    #screen-profile .screen-card--profile .profile-card {
+        margin-left: 12px;
+        margin-right: 12px;
+        width: calc(100% - 24px);
+    }
+
+    .bottom-tabbar {
+        left: var(--bottom-tabbar-inset);
+        right: var(--bottom-tabbar-inset);
+        width: auto;
+        max-width: none;
+        margin: 0;
+        transform: none;
+        border-radius: 16px 16px 0 0;
+    }
+}
+
+/* === Mobile: Profile, Calendar, Schedule & Warnings === */
+@media (max-width: 480px) {
+    #screen-calendar,
+    #screen-profile {
+        --font-xs: 11px;
+        --font-sm: 12px;
+        --font-base: 14px;
+        --font-md: 15px;
+        --font-lg: 16px;
+        --font-xl: 17px;
+        --app-gap: 10px;
+    }
+
+    #screen-calendar .phone-screen,
+    #screen-profile .phone-screen {
+        padding: 0;
+    }
+
+    #screen-calendar .calendar-top-block {
+        margin-bottom: 6px;
+        overflow: visible;
+        flex-shrink: 0;
+    }
+
+    #screen-calendar .calendar-header {
+        padding: 10px 8px 8px;
+    }
+
+    #screen-calendar .calendar-export-row {
+        padding: 0 8px 8px;
+    }
+
+    #screen-calendar .calendar-export-btn {
+        min-height: 36px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    #screen-calendar .calendar-nav-btn {
+        width: 34px;
+        height: 34px;
+        margin-top: 1px;
+        border-radius: var(--app-radius);
+    }
+
+    #screen-calendar .calendar-grid {
+        gap: 3px;
+        padding: 8px 10px 10px;
+        border-radius: 0;
+    }
+
+    #screen-calendar .calendar-legend {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #screen-calendar .weekday {
+        font-size: 9px;
+        padding-bottom: 2px;
+    }
+
+    #screen-calendar .day {
+        padding: 4px 3px;
+        border-radius: var(--app-radius);
+        min-height: 38px;
+    }
+
+    #screen-calendar .day--has-shift {
+        min-height: 48px;
+    }
+
+    #screen-calendar .day--multi {
+        min-height: 64px;
+    }
+
+    #screen-calendar .day-number {
+        font-size: 12px;
+        padding: 0 1px 3px;
+    }
+
+    #screen-calendar .day-shifts {
+        gap: 2px;
+    }
+
+    #screen-calendar .day-shift-chip {
+        padding: 3px 5px;
+        border-radius: 7px;
+    }
+
+    #screen-calendar .day-shift-label {
+        font-size: 11px;
+        line-height: 1.25;
+    }
+
+    #screen-calendar .day-shift-time {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    #screen-calendar .day--multi .day-shift-chip {
+        padding: 2px 4px;
+        border-radius: 6px;
+    }
+
+    #screen-calendar .day--multi .day-shift-label {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    #screen-calendar .day--multi .day-shift-time {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    #screen-calendar .day.today::before,
+    #screen-calendar .day.selected::before {
+        border-radius: 4.5px;
+    }
+
+    #screen-calendar .day.selected {
+        transform: none;
+        z-index: 1;
+    }
+
+    #screen-calendar .day:active {
+        transform: scale(0.97);
+    }
+
+    #screen-calendar .day.today:not(.day--has-shift) {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    #screen-calendar #monthTitle {
+        font-size: var(--font-md);
+    }
+
+    #screen-calendar .calendar-legend {
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    #screen-calendar .shift-constructor {
+        padding: 12px 10px 18px;
+    }
+
+    #screen-calendar .shift-constructor-input {
+        padding: 11px 10px;
+        font-size: 16px;
+    }
+
+    #screen-calendar .shift-constructor-btn {
+        min-height: 44px;
+        padding: 11px 16px;
+        font-size: var(--font-base);
+        font-weight: 500;
+        border-radius: var(--app-radius);
+    }
+
+    #screen-calendar .shift-constructor-hint {
+        font-size: var(--font-xs);
+        line-height: 1.45;
+    }
+
+    #screen-calendar .calendar-local-routes {
+        padding: 10px 8px;
+        border-radius: var(--app-radius);
+    }
+
+    #screen-calendar .calendar-local-routes-grid {
+        gap: 5px;
+    }
+
+    #screen-calendar .calendar-local-route-btn {
+        flex: 1 1 calc(33.33% - 4px);
+        min-width: 0;
+        min-height: 36px;
+        padding: 6px 6px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: var(--app-radius);
+    }
+
+    #screen-calendar .shift-summary--stacked {
+        --shift-summary-inset: 12px;
+    }
+
+    #screen-calendar .shift-summary--stacked + .shift-summary--stacked {
+        margin-top: 10px;
+    }
+
+    #screen-calendar .shift-summary--stacked .shift-constructor-btn--compact {
+        margin-top: 8px;
+        min-height: 40px;
+        font-size: var(--font-sm);
+    }
+
+    #screen-calendar .shift-summary__head {
+        padding: 12px 12px 8px;
+    }
+
+    #screen-calendar .shift-summary__title {
+        font-size: var(--font-sm);
+    }
+
+    #screen-calendar .shift-summary__field {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    #screen-calendar .shift-summary__time-input {
+        min-height: 48px;
+        font-size: var(--font-lg);
+    }
+
+    #screen-calendar .shift-summary__calc-value {
+        font-size: var(--font-base);
+    }
+
+    #screen-calendar .shift-summary-row {
+        padding: 10px 12px;
+        font-size: var(--font-sm);
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    #screen-calendar .shift-summary-row span:first-child {
+        font-size: var(--font-xs);
+        padding-top: 1px;
+    }
+
+    #screen-calendar .shift-summary-row span:last-child,
+    #screen-calendar .shift-summary-row .shift-summary-value {
+        font-weight: 500;
+    }
+
+    #screen-calendar .shift-summary-row--trains {
+        align-items: center;
+    }
+
+    #screen-calendar .shift-summary-row .money-caption {
+        font-size: 10px;
+    }
+
+    #screen-calendar .shift-summary-row .money-amount {
+        font-size: var(--font-base);
+        font-weight: 500;
+    }
+
+    #screen-calendar .trains-chip-panel--capsule .train-num-chip {
+        padding: 3px 6px;
+        font-size: 9px;
+        border-radius: 8px;
+    }
+
+    #screen-profile .profile-card {
+        padding: 12px 14px;
+    }
+
+    #screen-profile .profile-month-selector--embedded {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #screen-profile .profile-card--split {
+        gap: 10px;
+        padding: 0;
+    }
+
+    #screen-profile .profile-stats-unified {
+        padding: 12px 14px;
+    }
+
+    #screen-profile .profile-stats-unified__body {
+        gap: 14px;
+    }
+
+    #screen-profile .profile-stats-fact__value {
+        font-size: 20px;
+    }
+
+    #screen-profile .profile-stats-compare__row dt,
+    #screen-profile .profile-stats-compare__row dd {
+        font-size: 11px;
+    }
+
+    #screen-profile .profile-stats-unified__hours {
+        flex: 0 0 86px;
+        width: 86px;
+        min-width: 86px;
+    }
+
+    #screen-profile .profile-stats-unified__hours-ring-wrap,
+    #screen-profile .profile-stats-unified__hours-ring-wrap .profile-hours-ring--compact {
+        width: 70px;
+        height: 70px;
+    }
+
+    #screen-profile .profile-stats-hours-meta__norm {
+        font-size: 10px;
+    }
+
+    #screen-profile .profile-stats-hours-meta__status {
+        font-size: 11px;
+    }
+
+    #screen-profile .nearest-shift-route {
+        font-size: 22px;
+    }
+
+    #screen-profile .nearest-shift-meta-row dd {
+        font-size: 15px;
+    }
+
+    #screen-profile .nearest-shift-meta-row dt {
+        font-size: 12px;
+    }
+
+    #screen-profile .profile-qr-upload--empty {
+        min-height: 56px;
+        padding: 8px 10px;
+    }
+
+    #screen-profile .profile-qr-frame {
+        max-width: 260px;
+        padding: 8px;
+    }
+
+    #screen-profile .profile-qr-preview {
+        max-height: 260px;
+    }
+
+    #screen-profile .profile-qr-action-btn {
+        padding: 7px 8px;
+        font-size: clamp(9px, 2.4vw, 11px);
+    }
+
+    #screen-profile .profile-mini-block--qr {
+        grid-column: 1 / -1;
+        padding: 8px 10px 10px;
+    }
+
+    /* Расписание */
+    #screen-schedule .phone-screen {
+        padding: 0;
+    }
+
+    .schedule-glass-stack {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #screen-schedule .screen-card--schedule .schedule-glass-stack {
+        top: env(safe-area-inset-top, 0px);
+    }
+
+    #tab-schedule {
+        --schedule-pad-x: 14px;
+    }
+
+    .tab-btn {
+        padding: 9px 8px;
+        min-height: 38px;
+        font-size: 12px;
+    }
+
+    :root {
+        --glass-tabbar-width: 100%;
+        --glass-tabbar-bottom: 0px;
+    }
+
+    .bottom-tab-btn {
+        min-height: 44px;
+        padding: 7px 4px;
+    }
+
+    .schedule-route-card-middle {
+        min-height: 36px;
+    }
+
+    .schedule-route-card .route-card-section {
+        padding: 4px 10px 4px 16px;
+    }
+
+    .schedule-route-card-footer .schedule-date-hint {
+        font-size: 11px;
+    }
+
+    .schedule-route-card .route-card-title {
+        font-size: clamp(12px, 3.4vw, 14px);
+    }
+
+    .schedule-route-card .route-card-subtitle {
+        font-size: 10px;
+        gap: 6px;
+    }
+
+    .schedule-route-time {
+        font-size: clamp(16px, 4.2vw, 20px);
+    }
+
+    .schedule-live-clock-refresh {
+        width: 26px;
+        height: 26px;
+        border-radius: 3.5px;
+    }
+
+    .schedule-live-clock-refresh-icon {
+        width: 13px;
+        height: 13px;
+    }
+
+    .timeline.schedule-results-wrap {
+        --km-marker-width: 40px;
+        --axis-x: calc(var(--km-marker-width) + 5px);
+        --timeline-left: calc(4px + var(--axis-x));
+        padding-left: 4px;
+    }
+
+    .station-node {
+        margin-bottom: 0;
+    }
+
+    .station-card {
+        padding: 8px 2px;
+        gap: 8px;
+    }
+
+    .station-node.is-card .station-card,
+    .station-node.is-selected .station-card {
+        border: 1px solid #4a5d78;
+        border-radius: 8px;
+        padding: 8px 10px;
+    }
+
+    .station-dot {
+        min-height: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .station-dot::after {
+        font-size: 9px;
+    }
+
+    .station-time-value {
+        font-size: 13px;
+    }
+
+    .card-row-bottom {
+        padding-top: 0;
+        gap: 5px;
+    }
+
+    .route-tags-container,
+    .info-chip-row {
+        gap: 4px;
+    }
+
+    /* Компактная сводка смены */
+    .route-shift-panel .shift-date-night {
+        padding: 8px 12px 10px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) {
+        padding: 8px 10px 10px;
+        gap: 6px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__code {
+        min-width: 48px;
+        padding: 7px 10px;
+        font-size: var(--font-sm);
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__work {
+        font-size: var(--font-sm);
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__lunch {
+        font-size: 11px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__chevron {
+        min-height: 24px;
+        padding: 0 0 4px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__trains {
+        min-height: 28px;
+        height: 28px;
+        padding: 0 34px 0 6px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__chip {
+        min-height: 20px;
+        height: 20px;
+        padding: 0 6px;
+        font-size: 10px;
+    }
+
+    .route-shift-compact:not(.route-shift-compact--sticky) .route-shift-compact__add {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+        right: 5px;
+    }
+
+    #screen-schedule .route-header-card.header-card {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    #screen-schedule .header-top-row {
+        gap: 8px;
+    }
+
+    #screen-schedule .shift-time,
+    #screen-schedule .shift-times {
+        font-size: 13px;
+    }
+
+    #screen-schedule .toggle-btn,
+    #screen-schedule .shift-mode-segment__btn {
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .route-shift-expanded {
+        padding: 10px;
+    }
+
+    .route-train-chip-popover__box {
+        max-width: none;
+        padding: 14px 12px;
+    }
+
+    .route-train-chip-popover__grid {
+        gap: 8px;
+    }
+
+    .route-train-chip-popover__input {
+        min-height: 48px;
+        padding: 10px 8px;
+        font-size: var(--font-base);
+    }
+
+    /* Предупреждения ДУ-61 */
+    .shift-warnings-modal.shift-confirm-overlay {
+        padding: 10px;
+    }
+
+    .shift-warnings-box {
+        max-width: none;
+        max-height: min(94vh, 720px);
+        padding: 14px 12px;
+        border-radius: var(--card-radius);
+    }
+
+    .shift-warnings-title {
+        font-size: var(--font-base);
+    }
+
+    .shift-warnings-header {
+        margin-bottom: 10px;
+    }
+
+    .shift-warnings-form {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .shift-warnings-fields-row {
+        gap: 8px;
+    }
+
+    .shift-warnings-section-trigger,
+    .shift-warnings-input,
+    .shift-warnings-dir-tab,
+    .shift-warnings-add {
+        min-height: 44px;
+    }
+
+    .shift-warnings-list-scroll {
+        max-height: min(42vh, 240px);
+    }
+
+    .shift-warnings-trigger {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .shift-warnings-trigger-title {
+        font-size: 14px;
+    }
+
+    .shift-warnings-trigger-hint {
+        font-size: 11px;
+    }
+
+    .shift-warnings-trigger-arrow {
+        font-size: 16px;
+    }
+}
+

@@ -1,0 +1,4 @@
+{
+  "build_id": "GIT_COMMIT_HASH",
+  "updated_at": "BUILD_TIMESTAMP"
+}

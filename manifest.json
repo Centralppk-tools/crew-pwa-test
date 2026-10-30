@@ -1,0 +1,16 @@
+{
+  "name": "Цифровой помощник",
+  "short_name": "Цифр. помощник",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a1018",
+  "theme_color": "#0a1018",
+  "icons": [
+    {
+      "src": "assets/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
